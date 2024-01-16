@@ -7,23 +7,37 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<section class="box">
+
     <h1>E-Liquid Calculator</h1>
-    <input type="text" id="ammountToMake" value="120" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
-    <label for="ammountToMake">Ammount of Liquid to make (ml)</label> <br><br>
+
+    <div class="input-box">
+        <input type="text" id="ammountToMake" value="120" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+        <label for="ammountToMake">Ammount to make (ml)</label>
+    </div>
     
-    <input type="text" id="aromaPercentage" value="0" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
-    <label for="aromaPercentage">Aroma Percentage (%)</label><br><br>
+    <div class="input-box">
+        <input type="text" id="aromaPercentage" value="0" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+        <label for="aromaPercentage">Aroma Percentage (%)</label> 
+    </div>
+    
+    <div class="input-box">
+        <input type="text" id="desiredNicotineStrength" value="3" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+        <label for="desiredNicotineStrength">Desired Nicotine Strength (mg)</label>
+    </div>
 
-    <input type="text" id="desiredNicotineStrength" value="3" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
-    <label for="desiredNicotineStrength">Desired Nicotine Strength (mg)</label><br><br>
-
-    <input type="text" id="baseNicotineStrength" value="20" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
-    <label for="baseNicotineStrength">Nicotine Strength from Shot (mg)</label><br><br>
-
+    <div class="input-box">
+        <input type="text" id="baseNicotineStrength" value="20" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+        <label for="baseNicotineStrength">Nicotine Strength from Shot (mg)</label>
+    </div>
 
     <button type="submit" id="mySubmit">Calculate</button>
 
     <h3 id="myResult"></h3>
+
+</section>
+    
     
     <script src="script.js">Reload</script>
 </body>
