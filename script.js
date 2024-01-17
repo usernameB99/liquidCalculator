@@ -25,7 +25,12 @@ let zeroBase;
                     
                     nicBase = (desiredNicotineStrength * ammountToMake) / baseNicotineStrength;
                     zeroBase = ammountToMake - nicBase;
-                    result.textContent = `${zeroBase}ml basis + ${nicBase}ml Nikotin shot`;
+
+                    if(isNaN(nicBase) || isNaN(zeroBase)){
+                        result.textContent = `Only use numbers for calculation!`;
+                    } else {
+                        result.textContent = `${nicBase}ml Nikotin Shot + ${zeroBase}ml Base`;
+                    }
                 }
 
                 } else if(desiredNicotineStrength === 0 || desiredNicotineStrength === null){                             // without nicotine
@@ -33,15 +38,22 @@ let zeroBase;
                     if(aromaPercentage === 0 || aromaPercentage === null){
                         result.textContent = "you must type in aroma percentage that is greater than 0!"
                     } else{
+
                         aroma = (ammountToMake * aromaPercentage) / 100;
                         zeroBase = ammountToMake - aroma;
-                        result.textContent = `${aroma}ml aroma + ${zeroBase}ml basis`;
+
+                        if(isNaN(aroma) || isNaN(zeroBase)){
+                            result.textContent = `Only use numbers for calculation!`;
+                        } else{
+                            result.textContent = `${aroma}ml Aroma + ${zeroBase}ml Base`;
+                        }
+                        
                     }
                     
                 } else{                                                                                                   // do all calculations
 
                     if(baseNicotineStrength === 0 || baseNicotineStrength === null){
-                        result.textContent = "you must type in nicotine strength from nicotine shot that is grater than 0!!"
+                        result.textContent = "You must type in nicotine strength from nicotine shot that is grater than 0!"
                     } else{
 
                         aroma = (ammountToMake * aromaPercentage) / 100;
@@ -49,8 +61,13 @@ let zeroBase;
                         nicBase = (desiredNicotineStrength * ammountToMake) / baseNicotineStrength;
                 
                         zeroBase = ammountToMake - nicBase - aroma;
+
+                        if(isNaN(aroma) || isNaN(nicBase) || isNaN(zeroBase)){
+                            result.textContent = `Only use numbers for calculation!`;
+                        } else{
+                            result.textContent = `${aroma}ml Aroma + ${nicBase}ml Nikotin Shot + ${zeroBase}ml Base`;
+                        }
                 
-                        result.textContent = `${aroma}ml aroma + ${zeroBase}ml basis + ${nicBase}ml Nikotin shot`;
                     }
 
                 }
